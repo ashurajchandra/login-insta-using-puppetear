@@ -42,17 +42,6 @@ const instagram = {
             /* Go to the tag page*/ 
             await instagram.page.goto(TAG_URL(tag), {waitUntil:'networkidle2'});
             await instagram.page.waitFor(1000);
-
-            let posts = await instagram.page.$x('//*[@id="react-root"]/div/div/section/main/article/div[2]/div/div[1]');
-            console.log("posts",posts)
-            for(let i = 0; i<3; i++){
-                let post = posts[i];
-                console.log("post",post);
-
-                /* click on the post */
-                await post.click();
-            }
-            
         }
     }
 }
